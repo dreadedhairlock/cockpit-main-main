@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='FDMCLNT100')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zr_wm101_cockpit.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="zzdesigngrp_shType">
+                <Key>
+                    <PropertyRef Name="zzdesigngrp"/>
+                    <PropertyRef Name="werks"/>
+                </Key>
+                <Property Name="zzdesigngrp" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="cockpitType">
+                <Key>
+                    <PropertyRef Name="request_id"/>
+                </Key>
+                <Property Name="request_id" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="abc_indicator" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="site" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="schedule_desc" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="material_desc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="location" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="storage_loc" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="warehouse" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="storage_bin" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="special_stock" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="storage_type" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="book_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="base_unit_of_measure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="stock_value" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="counted_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="difference_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="cogi_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="reason_code" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="reason" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="difference_percent" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="difference_value" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="2"/>
+                <Property Name="material_type" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="valuation_class" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="item_size" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="design_group" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="mrp_controller" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="project" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="procurement_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="supplier" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="request_datetime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="deadline_datetime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="fulfill_datetime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="group_id" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="request_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="requestor" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="counter" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="location_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="remarks" Type="Edm.String" Nullable="false" MaxLength="200"/>
+                <Property Name="last_modify" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="comment_desc" Type="Edm.String" Nullable="false" MaxLength="200"/>
+                <Property Name="currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="criticality" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zr_wm101_cockpit.v0001.SAP__Message)" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="mtart_shType">
+                <Key>
+                    <PropertyRef Name="mtart"/>
+                </Key>
+                <Property Name="mtart" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="mtbez" Type="Edm.String" Nullable="false" MaxLength="25"/>
+            </EntityType>
+            <EntityType Name="lgpla_shType">
+                <Key>
+                    <PropertyRef Name="lgnum"/>
+                    <PropertyRef Name="lgtyp"/>
+                </Key>
+                <Property Name="lgnum" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="lgtyp" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="lgpla" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="lifnr_shType">
+                <Key>
+                    <PropertyRef Name="lifnr"/>
+                </Key>
+                <Property Name="lifnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="name1" Type="Edm.String" Nullable="false" MaxLength="35"/>
+            </EntityType>
+            <EntityType Name="zstatus_shType">
+                <Key>
+                    <PropertyRef Name="zstatus"/>
+                </Key>
+                <Property Name="zstatus" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="zdescription" Type="Edm.String" Nullable="false" MaxLength="20"/>
+            </EntityType>
+            <EntityType Name="lgort_shType">
+                <Key>
+                    <PropertyRef Name="werks"/>
+                    <PropertyRef Name="lgort"/>
+                </Key>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="lgort" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="lgobe" Type="Edm.String" Nullable="false" MaxLength="16"/>
+            </EntityType>
+            <EntityType Name="ABCIN_SHType">
+                <Key>
+                    <PropertyRef Name="abcin"/>
+                    <PropertyRef Name="werks"/>
+                </Key>
+                <Property Name="abcin" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="zsite_shType">
+                <Key>
+                    <PropertyRef Name="werks"/>
+                    <PropertyRef Name="zsite"/>
+                </Key>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="zsite" Type="Edm.String" Nullable="false" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="zschedule_shType">
+                <Key>
+                    <PropertyRef Name="zschedule"/>
+                </Key>
+                <Property Name="zschedule" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="zdescription" Type="Edm.String" Nullable="false" MaxLength="20"/>
+            </EntityType>
+            <EntityType Name="zzitemsize_shType">
+                <Key>
+                    <PropertyRef Name="werks"/>
+                    <PropertyRef Name="zzitemsize"/>
+                </Key>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="zzitemsize" Type="Edm.String" Nullable="false" MaxLength="5"/>
+            </EntityType>
+            <EntityType Name="bname_shType">
+                <Key>
+                    <PropertyRef Name="bname"/>
+                </Key>
+                <Property Name="bname" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="name_text" Type="Edm.String" Nullable="false" MaxLength="80"/>
+            </EntityType>
+            <EntityType Name="lgnum_shType">
+                <Key>
+                    <PropertyRef Name="lgnum"/>
+                </Key>
+                <Property Name="lgnum" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="lnumt" Type="Edm.String" Nullable="false" MaxLength="25"/>
+            </EntityType>
+            <EntityType Name="lgtyp_shType">
+                <Key>
+                    <PropertyRef Name="lgnum"/>
+                    <PropertyRef Name="lgtyp"/>
+                </Key>
+                <Property Name="lgnum" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="lgtyp" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="ltypt" Type="Edm.String" Nullable="false" MaxLength="25"/>
+            </EntityType>
+            <EntityType Name="zrsn_code_shType">
+                <Key>
+                    <PropertyRef Name="werks"/>
+                    <PropertyRef Name="zrsn_code"/>
+                </Key>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="zrsn_code" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="zrsn_desc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+            </EntityType>
+            <EntityType Name="bklas_shType">
+                <Key>
+                    <PropertyRef Name="bklas"/>
+                </Key>
+                <Property Name="bklas" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="mtart" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="bkbez" Type="Edm.String" Nullable="false" MaxLength="25"/>
+            </EntityType>
+            <EntityType Name="plant_shType">
+                <Key>
+                    <PropertyRef Name="werks"/>
+                </Key>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="name1" Type="Edm.String" Nullable="false" MaxLength="30"/>
+            </EntityType>
+            <EntityType Name="zzproject_shType">
+                <Key>
+                    <PropertyRef Name="zzproject"/>
+                </Key>
+                <Property Name="zzproject" Type="Edm.String" Nullable="false" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="matnr_shType">
+                <Key>
+                    <PropertyRef Name="matnr"/>
+                    <PropertyRef Name="werks"/>
+                </Key>
+                <Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="maktx" Type="Edm.String" Nullable="false" MaxLength="40"/>
+            </EntityType>
+            <EntityType Name="kunnr_shType">
+                <Key>
+                    <PropertyRef Name="kunnr"/>
+                </Key>
+                <Property Name="kunnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="name1" Type="Edm.String" Nullable="false" MaxLength="35"/>
+            </EntityType>
+            <EntityType Name="dispo_shType">
+                <Key>
+                    <PropertyRef Name="werks"/>
+                    <PropertyRef Name="dispo"/>
+                </Key>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="dispo" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="dsnam" Type="Edm.String" Nullable="false" MaxLength="18"/>
+            </EntityType>
+            <ComplexType Name="cockpitOperationControl">
+                <Property Name="cancel_counting" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="check_counting_data" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="complete_counting" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="counting" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZA_WM101_CHECK_COUNTING_IM">
+                <Property Name="location_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="request_id" Type="Edm.String" Nullable="false" MaxLength="20"/>
+            </ComplexType>
+            <ComplexType Name="ZI_WM101_COCKPIT_COUNTING_RES">
+                <Property Name="abc_indicator" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="action_name" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="base_unit_of_measure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="book_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="cogi_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="comment_desc" Type="Edm.String" Nullable="false" MaxLength="200"/>
+                <Property Name="counted_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="counter" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="criticality" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="deadline_datetime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="design_group" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="difference_percent" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="difference_qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="difference_value" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="2"/>
+                <Property Name="fulfill_datetime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="group_id" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="item_size" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="last_modify" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="location" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="location_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="material_desc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="material_type" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="mrp_controller" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="procurement_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="project" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="reason" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="reason_code" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="remarks" Type="Edm.String" Nullable="false" MaxLength="200"/>
+                <Property Name="requestor" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="request_datetime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="request_id" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="request_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="schedule_desc" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="semantic_object" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="site" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="special_stock" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="stock_value" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="storage_bin" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="storage_loc" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="storage_type" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="supplier" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="valuation_class" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="warehouse" Type="Edm.String" Nullable="false" MaxLength="3"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="add_request" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType)" Nullable="false"/>
+            </Action>
+            <Action Name="check_counting_data" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
+                <Parameter Name="request_id" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Parameter Name="location_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ZA_WM101_CHECK_COUNTING_IM" Nullable="false"/>
+            </Action>
+            <Action Name="cancel_counting" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
+            </Action>
+            <Action Name="complete_counting" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
+            </Action>
+            <Action Name="counting" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ZI_WM101_COCKPIT_COUNTING_RES" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ABCIN_SH" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ABCIN_SHType"/>
+                <EntitySet Name="bklas_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.bklas_shType"/>
+                <EntitySet Name="bname_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.bname_shType"/>
+                <EntitySet Name="cockpit" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType"/>
+                <EntitySet Name="dispo_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.dispo_shType"/>
+                <EntitySet Name="kunnr_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.kunnr_shType"/>
+                <EntitySet Name="lgnum_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lgnum_shType"/>
+                <EntitySet Name="lgort_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lgort_shType"/>
+                <EntitySet Name="lgpla_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lgpla_shType"/>
+                <EntitySet Name="lgtyp_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lgtyp_shType"/>
+                <EntitySet Name="lifnr_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lifnr_shType"/>
+                <EntitySet Name="matnr_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.matnr_shType"/>
+                <EntitySet Name="mtart_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.mtart_shType"/>
+                <EntitySet Name="plant_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.plant_shType"/>
+                <EntitySet Name="zrsn_code_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zrsn_code_shType"/>
+                <EntitySet Name="zschedule_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zschedule_shType"/>
+                <EntitySet Name="zsite_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zsite_shType"/>
+                <EntitySet Name="zstatus_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zstatus_shType"/>
+                <EntitySet Name="zzdesigngrp_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zzdesigngrp_shType"/>
+                <EntitySet Name="zzitemsize_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zzitemsize_shType"/>
+                <EntitySet Name="zzproject_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.zzproject_shType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/book_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/cogi_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/counted_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.Label" String="货币"/>
+                <Annotation Term="SAP__common.QuickInfo" String="货币码"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/difference_percent">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/difference_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/difference_value">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/stock_value">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzdesigngrp_shType/zzdesigngrp">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Design group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzdesigngrp_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzdesigngrp_shType">
+                <Annotation Term="SAP__common.Label" String="Design Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zzdesigngrp_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/abc_indicator">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="ABC Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/plant">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/site">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="地点"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/book_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/base_unit_of_measure">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="基本计量单位"/>
+                <Annotation Term="SAP__common.Heading" String="计"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/stock_value">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/counted_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/difference_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/cogi_qty">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/difference_percent">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/difference_value">
+                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="货币"/>
+                <Annotation Term="SAP__common.QuickInfo" String="货币码"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/criticality">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.check_counting_data(SAP__self.cockpitType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/check_counting_data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cancel_counting(SAP__self.cockpitType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/cancel_counting"/>
+            </Annotations>
+            <Annotations Target="SAP__self.complete_counting(SAP__self.cockpitType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/complete_counting"/>
+            </Annotations>
+            <Annotations Target="SAP__self.counting(SAP__self.cockpitType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/counting"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType">
+                <Annotation Term="SAP__common.Label" String="Cockpit using custom entity"/>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Request ID"/>
+                            <PropertyValue Property="Value" Path="request_id"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="ABC"/>
+                            <PropertyValue Property="Value" Path="abc_indicator"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="State"/>
+                            <PropertyValue Property="Value" Path="status"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Schedule"/>
+                            <PropertyValue Property="Value" Path="schedule_desc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Item.nr"/>
+                            <PropertyValue Property="Value" Path="material"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Description"/>
+                            <PropertyValue Property="Value" Path="material_desc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Location"/>
+                            <PropertyValue Property="Value" Path="location"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Location Type"/>
+                            <PropertyValue Property="Value" Path="storage_type"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/cockpit">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="request_id"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="abc_indicator"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="plant"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="site"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="schedule_desc"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="material"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="location"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="storage_loc"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="warehouse"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="storage_bin"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="special_stock"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="storage_type"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="book_qty"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="counted_qty"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="difference_qty"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="reason_code"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="difference_percent"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="difference_value"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="material_type"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="valuation_class"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="item_size"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="design_group"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="mrp_controller"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="project"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="procurement_type"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="customer"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="supplier"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="request_datetime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="deadline_datetime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="fulfill_datetime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="period"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="group_id"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="request_type"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="requestor"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="counter"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.mtart_shType/mtart">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="物料类型"/>
+                <Annotation Term="SAP__common.Heading" String="MTyp"/>
+            </Annotations>
+            <Annotations Target="SAP__self.mtart_shType">
+                <Annotation Term="SAP__common.Label" String="Material Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/mtart_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.lgpla_shType/lgnum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仓库号"/>
+                <Annotation Term="SAP__common.Heading" String="WhN"/>
+                <Annotation Term="SAP__common.QuickInfo" String="仓库号/混合仓库"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgpla_shType/lgtyp">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仓储类型"/>
+                <Annotation Term="SAP__common.Heading" String="类"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgpla_shType/lgpla">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仓位"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgpla_shType">
+                <Annotation Term="SAP__common.Label" String="Storage Bin"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/lgpla_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.lifnr_shType/lifnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="供应商"/>
+                <Annotation Term="SAP__common.QuickInfo" String="供应商科目编号"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lifnr_shType">
+                <Annotation Term="SAP__common.Label" String="Supplier"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/lifnr_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zstatus_shType/zstatus">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="状态"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zstatus_shType/zdescription">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zstatus_shType">
+                <Annotation Term="SAP__common.Label" String="Status Search Help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zstatus_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.lgort_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgort_shType/lgort">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="存储地点"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgort_shType">
+                <Annotation Term="SAP__common.Label" String="库存地点搜索帮助"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/lgort_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ABCIN_SHType/abcin">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="周期盘点库存盘点标识"/>
+                <Annotation Term="SAP__common.Heading" String="CC"/>
+                <Annotation Term="SAP__common.QuickInfo" String="周期盘点的库存盘点标识"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ABCIN_SHType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ABCIN_SHType">
+                <Annotation Term="SAP__common.Label" String="ABC Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ABCIN_SH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zsite_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zsite_shType/zsite">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="地点"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zsite_shType">
+                <Annotation Term="SAP__common.Label" String="Site搜索帮助"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zsite_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zschedule_shType/zschedule">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="计划类型"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zschedule_shType/zdescription">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zschedule_shType">
+                <Annotation Term="SAP__common.Label" String="Schedule search help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zschedule_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zzitemsize_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzitemsize_shType/zzitemsize">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Size"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzitemsize_shType">
+                <Annotation Term="SAP__common.Label" String="Item size"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zzitemsize_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.bname_shType/bname">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="用户"/>
+                <Annotation Term="SAP__common.Heading" String="用户名"/>
+                <Annotation Term="SAP__common.QuickInfo" String="用户主记录中的用户名称"/>
+            </Annotations>
+            <Annotations Target="SAP__self.bname_shType">
+                <Annotation Term="SAP__common.Label" String="Counter"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/bname_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.lgnum_shType/lgnum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仓库号"/>
+                <Annotation Term="SAP__common.Heading" String="WhN"/>
+                <Annotation Term="SAP__common.QuickInfo" String="仓库号/混合仓库"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgnum_shType">
+                <Annotation Term="SAP__common.Label" String="仓库编号"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/lgnum_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.lgtyp_shType/lgnum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仓库号"/>
+                <Annotation Term="SAP__common.Heading" String="WhN"/>
+                <Annotation Term="SAP__common.QuickInfo" String="仓库号/混合仓库"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgtyp_shType/lgtyp">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="仓储类型"/>
+                <Annotation Term="SAP__common.Heading" String="类"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgtyp_shType">
+                <Annotation Term="SAP__common.Label" String="Storage Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/lgtyp_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zrsn_code_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zrsn_code_shType/zrsn_code">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Reason Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zrsn_code_shType/zrsn_desc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Reason Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zrsn_code_shType">
+                <Annotation Term="SAP__common.Label" String="Reason Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zrsn_code_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.bklas_shType/bklas">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="评估类"/>
+                <Annotation Term="SAP__common.Heading" String="ValCl"/>
+            </Annotations>
+            <Annotations Target="SAP__self.bklas_shType/mtart">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="物料类型"/>
+                <Annotation Term="SAP__common.Heading" String="MTyp"/>
+            </Annotations>
+            <Annotations Target="SAP__self.bklas_shType">
+                <Annotation Term="SAP__common.Label" String="Valuation Class"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/bklas_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.plant_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.plant_shType">
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/plant_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zzproject_shType/zzproject">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="项目"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzproject_shType">
+                <Annotation Term="SAP__common.Label" String="Project"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zzproject_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.matnr_shType/matnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="物料"/>
+                <Annotation Term="SAP__common.QuickInfo" String="物料编号"/>
+            </Annotations>
+            <Annotations Target="SAP__self.matnr_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.matnr_shType">
+                <Annotation Term="SAP__common.Label" String="Material"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/matnr_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.kunnr_shType/kunnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="客户"/>
+                <Annotation Term="SAP__common.QuickInfo" String="客户编号"/>
+            </Annotations>
+            <Annotations Target="SAP__self.kunnr_shType">
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/kunnr_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.dispo_shType/werks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.dispo_shType/dispo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="MRP 控制员"/>
+                <Annotation Term="SAP__common.Heading" String="MRPCn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.dispo_shType">
+                <Annotation Term="SAP__common.Label" String="MRP Controller"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/dispo_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/request_datetime">
+                <Annotation Term="SAP__common.Label" String="时戳"/>
+                <Annotation Term="SAP__common.QuickInfo" String="长格式的 UTC 时戳 (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/deadline_datetime">
+                <Annotation Term="SAP__common.Label" String="时戳"/>
+                <Annotation Term="SAP__common.QuickInfo" String="长格式的 UTC 时戳 (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/fulfill_datetime">
+                <Annotation Term="SAP__common.Label" String="时戳"/>
+                <Annotation Term="SAP__common.QuickInfo" String="长格式的 UTC 时戳 (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/__OperationControl/cancel_counting">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/__OperationControl/check_counting_data">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/__OperationControl/complete_counting">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/__OperationControl/counting">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.mtart_shType/mtbez">
+                <Annotation Term="SAP__common.Label" String="物料类型描述"/>
+                <Annotation Term="SAP__common.QuickInfo" String="物料类型的描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lifnr_shType/name1">
+                <Annotation Term="SAP__common.Label" String="名称"/>
+                <Annotation Term="SAP__common.Heading" String="名称 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="名称 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgort_shType/lgobe">
+                <Annotation Term="SAP__common.Label" String="描述"/>
+                <Annotation Term="SAP__common.Heading" String="存储地点描述"/>
+                <Annotation Term="SAP__common.QuickInfo" String="存储地点描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.bname_shType/name_text">
+                <Annotation Term="SAP__common.Label" String="全名"/>
+                <Annotation Term="SAP__common.QuickInfo" String="完整的人员名称"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgnum_shType/lnumt">
+                <Annotation Term="SAP__common.Label" String="仓库编号描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgtyp_shType/ltypt">
+                <Annotation Term="SAP__common.Label" String="仓储类型名称"/>
+            </Annotations>
+            <Annotations Target="SAP__self.bklas_shType/bkbez">
+                <Annotation Term="SAP__common.Label" String="描述"/>
+                <Annotation Term="SAP__common.QuickInfo" String="评估类的描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.plant_shType/name1">
+                <Annotation Term="SAP__common.Label" String="名称 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="名称"/>
+            </Annotations>
+            <Annotations Target="SAP__self.matnr_shType/maktx">
+                <Annotation Term="SAP__common.Label" String="物料描述"/>
+            </Annotations>
+            <Annotations Target="SAP__self.kunnr_shType/name1">
+                <Annotation Term="SAP__common.Label" String="名称"/>
+                <Annotation Term="SAP__common.Heading" String="名称 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="名称 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.dispo_shType/dsnam">
+                <Annotation Term="SAP__common.Label" String="MRP控制者名称"/>
+                <Annotation Term="SAP__common.Heading" String="名称"/>
+                <Annotation Term="SAP__common.QuickInfo" String="控制者名称"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitOperationControl/cancel_counting">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitOperationControl/check_counting_data">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitOperationControl/complete_counting">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitOperationControl/counting">
+                <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZA_WM101_CHECK_COUNTING_IM/location_type">
+                <Annotation Term="SAP__common.Label" String="Location Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/abc_indicator">
+                <Annotation Term="SAP__common.Label" String="ABC Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/base_unit_of_measure">
+                <Annotation Term="SAP__common.Label" String="基本计量单位"/>
+                <Annotation Term="SAP__common.Heading" String="计"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/deadline_datetime">
+                <Annotation Term="SAP__common.Label" String="时戳"/>
+                <Annotation Term="SAP__common.QuickInfo" String="长格式的 UTC 时戳 (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/fulfill_datetime">
+                <Annotation Term="SAP__common.Label" String="时戳"/>
+                <Annotation Term="SAP__common.QuickInfo" String="长格式的 UTC 时戳 (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/plant">
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/request_datetime">
+                <Annotation Term="SAP__common.Label" String="时戳"/>
+                <Annotation Term="SAP__common.QuickInfo" String="长格式的 UTC 时戳 (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/site">
+                <Annotation Term="SAP__common.Label" String="地点"/>
+            </Annotations>
+            <Annotations Target="SAP__self.check_counting_data(SAP__self.cockpitType)/location_type">
+                <Annotation Term="SAP__common.Label" String="Location Type"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

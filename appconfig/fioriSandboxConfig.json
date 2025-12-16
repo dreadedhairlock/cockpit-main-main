@@ -1,0 +1,9 @@
+{
+  "applications": {
+    "zwm316binstock-display": {
+      "additionalInformation": "SAPUI5.Component=zwm316binstock",
+      "applicationType": "URL",
+      "url": "../resources/zwm316binstock"
+    }
+  }
+}

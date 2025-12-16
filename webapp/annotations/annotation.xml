@@ -1,0 +1,690 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata4/sap/zui_wm101_cockpit/srvd/sap/zr_wm101_cockpit/0001/$metadata">
+        <edmx:Include Namespace="com.sap.gateway.srvd.zr_wm101_cockpit.v0001" Alias="SAP__self"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="SAP__self.cockpitType">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>abc_indicator</PropertyPath>
+                        <PropertyPath>plant</PropertyPath>
+                        <PropertyPath>site</PropertyPath>
+                        <PropertyPath>status</PropertyPath>
+                        <PropertyPath>schedule_desc</PropertyPath>
+                        <PropertyPath>material</PropertyPath>
+                        <PropertyPath>location</PropertyPath>
+                        <PropertyPath>storage_loc</PropertyPath>
+                        <PropertyPath>warehouse</PropertyPath>
+                        <PropertyPath>storage_bin</PropertyPath>
+                        <PropertyPath>special_stock</PropertyPath>
+                        <PropertyPath>storage_type</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="request_id"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="abc_indicator"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="plant"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="site"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="status"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="schedule_desc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="material"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="material_desc"/>
+                            <PropertyValue Property="Label" String="{@i18n>materialDescription}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="location"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="storage_loc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="warehouse"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="storage_bin"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="storage_type"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="special_stock"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="book_qty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="base_unit_of_measure"/>
+                            <PropertyValue Property="Label" String="{@i18n>baseUnitOfMeasure}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="stock_value"/>
+                            <PropertyValue Property="Label" String="{@i18n>stockValue}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="counted_qty"/>
+                            <PropertyValue Property="Label" String="{@i18n>countedQuantity}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="difference_qty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="cogi_qty"/>
+                            <PropertyValue Property="Label" String="{@i18n>cogiQuantity}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="reason_code"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="reason"/>
+                            <PropertyValue Property="Label" String="{@i18n>reason}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="difference_percent"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="difference_value"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="material_type"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="valuation_class"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="item_size"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="design_group"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="mrp_controller"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="project"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="procurement_type"/>
+                            <PropertyValue Property="Label" String="{@i18n>procurementType}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="customer"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="supplier"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="request_datetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="deadline_datetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="fulfill_datetime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="period"/>
+                            <PropertyValue Property="Label" String="{@i18n>period}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="group_id"/>
+                            <PropertyValue Property="Label" String="{@i18n>groupId}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="request_type"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="requestor"/>
+                            <PropertyValue Property="Label" String="{@i18n>requestor}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="counter"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="remarks"/>
+                            <PropertyValue Property="Label" String="{@i18n>remarks}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="last_modify"/>
+                            <PropertyValue Property="Label" String="{@i18n>lastModify}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="comment_desc"/>
+                            <PropertyValue Property="Label" String="{@i18n>comment}"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/plant">
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="plant_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="name1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.Label" String="{@i18n>plant}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/abc_indicator">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ABCIN_SH"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="abc_indicator"/>
+                                    <PropertyValue Property="ValueListProperty" String="abcin"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Label" String="{@i18n>abcIndicator}"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+                <Annotation Term="Common.Label" String="{@i18n>abcIndicator}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.plant_shType/werks">
+                <Annotation Term="Common.Text" Path="name1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/site">
+                <Annotation Term="Common.Label" String="{@i18n>site}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="zsite_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="site"/>
+                                    <PropertyValue Property="ValueListProperty" String="zsite"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/material">
+                <Annotation Term="Common.Label" String="{@i18n>material}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="matnr_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="material"/>
+                                    <PropertyValue Property="ValueListProperty" String="matnr"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="maktx"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/status">
+                <Annotation Term="Common.Label" String="{@i18n>status}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="zstatus_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="status"/>
+                                    <PropertyValue Property="ValueListProperty" String="zstatus"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="zdescription"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/schedule_desc">
+                <Annotation Term="Common.Label" String="{@i18n>schedule}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="zschedule_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="schedule_desc"/>
+                                    <PropertyValue Property="ValueListProperty" String="zschedule"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="zdescription"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/location">
+                <Annotation Term="Common.Label" String="{@i18n>location}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/storage_loc">
+                <Annotation Term="Common.Label" String="{@i18n>storageLocation}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="lgort_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="storage_loc"/>
+                                    <PropertyValue Property="ValueListProperty" String="lgort"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="lgobe"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgort_shType/lgort">
+                <Annotation Term="Common.Text" Path="lgobe"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/warehouse">
+                <Annotation Term="Common.Label" String="{@i18n>warehouse}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="lgnum_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="warehouse"/>
+                                    <PropertyValue Property="ValueListProperty" String="lgnum"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="lnumt"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgnum_shType/lgnum">
+                <Annotation Term="Common.Text" Path="lnumt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/storage_bin">
+                <Annotation Term="Common.Label" String="{@i18n>storageBin}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="lgpla_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="storage_bin"/>
+                                    <PropertyValue Property="ValueListProperty" String="lgpla"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="lgnum"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="lgtyp"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/special_stock">
+                <Annotation Term="Common.Label" String="{@i18n>specialStock}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/storage_type">
+                <Annotation Term="Common.Label" String="{@i18n>storageType}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="lgtyp_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="storage_type"/>
+                                    <PropertyValue Property="ValueListProperty" String="lgtyp"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="lgnum"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ltypt"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.lgtyp_shType/lgtyp">
+                <Annotation Term="Common.Text" Path="ltypt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/book_qty">
+                <Annotation Term="Common.Label" String="{@i18n>bookQuantity}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/counted_qty">
+                <Annotation Term="Common.Label" String="Counted Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/difference_qty">
+                <Annotation Term="Common.Label" String="{@i18n>difference}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/reason_code">
+                <Annotation Term="Common.Label" String="{@i18n>reasonCode}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="zrsn_code_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="reason_code"/>
+                                    <PropertyValue Property="ValueListProperty" String="zrsn_code"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="zrsn_desc"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zrsn_code_shType/zrsn_code">
+                <Annotation Term="Common.Text" Path="zrsn_desc"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/difference_percent">
+                <Annotation Term="Common.Label" String="{@i18n>difference1}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/difference_value">
+                <Annotation Term="Common.Label" String="{@i18n>differenceValue}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/material_type">
+                <Annotation Term="Common.Label" String="{@i18n>materialType}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="mtart_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="material_type"/>
+                                    <PropertyValue Property="ValueListProperty" String="mtart"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="mtbez"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.mtart_shType/mtart">
+                <Annotation Term="Common.Text" Path="mtbez"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/valuation_class">
+                <Annotation Term="Common.Label" String="{@i18n>valuationClass}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="bklas_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="valuation_class"/>
+                                    <PropertyValue Property="ValueListProperty" String="bklas"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="mtart"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="material_type"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="bkbez"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.bklas_shType/bklas">
+                <Annotation Term="Common.Text" Path="bkbez"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/item_size">
+                <Annotation Term="Common.Label" String="{@i18n>itemSize}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="zzdesigngrp_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="item_size"/>
+                                    <PropertyValue Property="ValueListProperty" String="zzdesigngrp"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/design_group">
+                <Annotation Term="Common.Label" String="{@i18n>designGroup}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zzdesigngrp_shType/zzdesigngrp">
+                <Annotation Term="Common.Text" Path="werks"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/mrp_controller">
+                <Annotation Term="Common.Label" String="{@i18n>mrpController}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="dispo_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="mrp_controller"/>
+                                    <PropertyValue Property="ValueListProperty" String="dispo"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="ValueListProperty" String="werks"/>
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="plant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="dsnam"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.dispo_shType/dispo">
+                <Annotation Term="Common.Text" Path="dsnam"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/project">
+                <Annotation Term="Common.Label" String="{@i18n>project}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="zzproject_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="project"/>
+                                    <PropertyValue Property="ValueListProperty" String="zzproject"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/customer">
+                <Annotation Term="Common.Label" String="{@i18n>customer}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="kunnr_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="customer"/>
+                                    <PropertyValue Property="ValueListProperty" String="kunnr"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="name1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.kunnr_shType/kunnr">
+                <Annotation Term="Common.Text" Path="name1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/supplier">
+                <Annotation Term="Common.Label" String="{@i18n>supplier}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="lifnr_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="supplier"/>
+                                    <PropertyValue Property="ValueListProperty" String="lifnr"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="name1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/request_id">
+                <Annotation Term="Common.Label" String="{@i18n>requestId}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="bname_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="request_id"/>
+                                    <PropertyValue Property="ValueListProperty" String="bname"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="name_text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/request_type">
+                <Annotation Term="Common.Label" String="{@i18n>requestType}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/counter">
+                <Annotation Term="Common.Label" String="{@i18n>counter}"/>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="bname_sh"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="counter"/>
+                                    <PropertyValue Property="ValueListProperty" String="bname"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="name_text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="false"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/request_datetime">
+                <Annotation Term="Common.Label" String="{@i18n>requestDatetime}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/deadline_datetime">
+                <Annotation Term="Common.Label" String="Deadline Datetime"/>
+                <Annotation Term="Common.Label" String="{@i18n>deadlineDatetime}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/fulfill_datetime">
+                <Annotation Term="Common.Label" String="{@i18n>fulfillmentDatetime}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/group_id">
+                <Annotation Term="Common.Label" String="{@i18n>groupId}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/requestor">
+                <Annotation Term="Common.Label" String="{@i18n>requestor}"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zsite_shType/zsite">
+                <Annotation Term="Common.Text" Path="werks"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zstatus_shType/zstatus">
+                <Annotation Term="Common.Text" Path="zdescription"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zschedule_shType/zschedule">
+                <Annotation Term="Common.Text" Path="zdescription"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
