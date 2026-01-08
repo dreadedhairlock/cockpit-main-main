@@ -150,14 +150,14 @@ sap.ui.define(
                         this._actionName = oSemanticObject.action_name;
                         var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
                         oCrossAppNavigator.toExternal({
-                                target: {
-                                    semanticObject: oSemanticObject.semantic_object,
-                                    action: oSemanticObject.action_name
-                                }
-                            }).catch((error) => {
-                                MessageToast.show("Navigation failed: " + (error.message || "Unknown error"));
-                                console.error("Navigation error:", error);
-                            });
+                            target: {
+                                semanticObject: oSemanticObject.semantic_object,
+                                action: oSemanticObject.action_name
+                            }
+                        }).catch((error) => {
+                            MessageToast.show("Navigation failed: " + (error.message || "Unknown error"));
+                            console.error("Navigation error:", error);
+                        });
                     });
                 },
 
