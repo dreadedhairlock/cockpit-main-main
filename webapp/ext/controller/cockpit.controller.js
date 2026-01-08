@@ -6,6 +6,14 @@ sap.ui.define(
         return ControllerExtension.extend(
             "cockpit.ext.controller.cockpit",
             {
+                //private properties
+                _plant: null,
+                _site: null,
+
+                _counter: null,
+
+                _semanticObject: null,
+                _actionName: null,
                 // * Private instance props for
 
                 // * Lifecycle hook: called once on extension init
@@ -14,8 +22,110 @@ sap.ui.define(
                         // TODO: add any custom init logic here
                         const oMessageManager = sap.ui.getCore().getMessageManager();
                         oMessageManager.registerObject(this.getView(), true);
-                        // this._setDefaultPlant();
+                        // this._setDefaultValue();
                     },
+
+                    onAfterRendering: function () {
+                        this._setDefaultValue();
+                    }
+                },
+                _setDefaultValue: async function () {
+                    const oModel = this.base.getExtensionAPI().getModel();
+                    const oContext = this.getView().getBindingContext();
+                    const oAction = oModel.bindContext(
+                        "/cockpit/com.sap.gateway.srvd.zr_wm101_cockpit.v0001.get_default_parameters(...)",
+                        oContext
+                    );
+                    oAction.execute().then(() => {
+                        const oBoundContext = oAction.getBoundContext();
+                        var oDefaultParams = oBoundContext.getObject();
+                        this._plant = oDefaultParams.plant;
+                        this._site = oDefaultParams.site;
+                        this._counter = oDefaultParams.counter;
+                        var lv_counter = oDefaultParams.check_counter;
+                        var oView = this.base.getView();
+                        var oFilterBar = oView.byId("fe::FilterBar::cockpit");
+                        if (oFilterBar) {
+                            var oFilterPlant = oView.byId(
+                                "fe::FilterBar::cockpit::FilterField::plant" // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+                            );
+
+                            var oFilterSite = oView.byId(
+                                "fe::FilterBar::cockpit::FilterField::site" // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+                            );
+
+                            var oFilterStatus = oView.byId(
+                                "fe::FilterBar::cockpit::FilterField::status" // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+                            );
+
+                            var oFilterStatus = oView.byId(
+                                "fe::FilterBar::cockpit::FilterField::status" // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+                            );
+
+                            var oFilterCounter = oView.byId(
+                                "fe::FilterBar::cockpit::FilterField::counter" // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+                            );
+
+                            if (oFilterPlant) {
+                                // Set multiple conditions
+                                oFilterPlant.setConditions([
+                                    {
+                                        operator: "EQ",
+                                        values: [this._plant],
+                                        validated: "Validated",
+                                    }
+                                ]);
+                            } else {
+                                sap.m.MessageBox.error(this._getText('noAuthorizationMsg'));
+                            }
+                            if (oFilterSite) {
+                                if (this._site) {
+                                    // Set multiple conditions
+                                    oFilterSite.setConditions([
+                                        {
+                                            operator: "EQ",
+                                            values: [this._site],
+                                            validated: "Validated",
+                                        }
+                                    ]);
+                                }
+                            }
+                            if (oFilterCounter) {
+                                if (this._counter) {
+                                    // Set multiple conditions
+                                    oFilterCounter.setConditions([
+                                        {
+                                            operator: "EQ",
+                                            values: [this._counter],
+                                            validated: "Validated",
+                                        }
+                                    ]);
+                                }
+                            }
+                            if (lv_counter) {
+                                if (oFilterStatus) {
+                                    oFilterStatus.setConditions([
+                                        {
+                                            operator: "NE",
+                                            values: ["X"],
+                                            validated: "Validated",
+                                        },
+                                        {
+                                            operator: "NE",
+                                            values: ["D"],
+                                            validated: "Validated",
+                                        },
+                                    ]);
+                                }
+                                // Auto trigger search
+                                oFilterBar.triggerSearch();
+                            }
+
+                        }
+                    });
+
+
+
                 },
                 // * Utility: fetch text from i18n model by key, with optional params
                 _getText: function (sKey, aArgs) {
@@ -27,8 +137,28 @@ sap.ui.define(
 
                 // * Opens the file-upload dialog when user clicks “Upload”
                 onAddRequest: async function () {
-                    //   TO:DO handle to open add request page
-
+                    const oModel = this.base.getExtensionAPI().getModel();
+                    const oContext = this.getView().getBindingContext();
+                    const oAction = oModel.bindContext(
+                        "/cockpit/com.sap.gateway.srvd.zr_wm101_cockpit.v0001.add_request(...)",
+                        oContext
+                    );
+                    oAction.execute().then(() => {
+                        const oBoundContext = oAction.getBoundContext();
+                        var oSemanticObject = oBoundContext.getObject();
+                        this._semanticObject = oSemanticObject.semantic_object;
+                        this._actionName = oSemanticObject.action_name;
+                        var oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
+                        oCrossAppNavigator.toExternal({
+                                target: {
+                                    semanticObject: oSemanticObject.semantic_object,
+                                    action: oSemanticObject.action_name
+                                }
+                            }).catch((error) => {
+                                MessageToast.show("Navigation failed: " + (error.message || "Unknown error"));
+                                console.error("Navigation error:", error);
+                            });
+                    });
                 },
 
                 // * Handles “Cancel” in the dialog: close, destroy & clear data
@@ -228,6 +358,18 @@ sap.ui.define(
                                 MessageToast.show("Navigation failed: " + (error.message || "Unknown error"));
                                 console.error("Navigation error:", error);
                             });
+                            break;
+                        case 'zwm311countreq':
+                            oCrossAppNavigator.toExternal({
+                                target: {
+                                    semanticObject: oParams.semantic_object,
+                                    action: oParams.action_name
+                                }
+                            }).catch((error) => {
+                                MessageToast.show("Navigation failed: " + (error.message || "Unknown error"));
+                                console.error("Navigation error:", error);
+                            });
+                            break;
                         default:
                             break;
                     }

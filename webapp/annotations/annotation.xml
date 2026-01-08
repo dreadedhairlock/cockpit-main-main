@@ -25,6 +25,7 @@
                         <PropertyPath>storage_bin</PropertyPath>
                         <PropertyPath>special_stock</PropertyPath>
                         <PropertyPath>storage_type</PropertyPath>
+                        <PropertyPath>counter</PropertyPath>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.LineItem">
@@ -88,9 +89,6 @@
                             <PropertyValue Property="Label" String="{@i18n>countedQuantity}"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="difference_qty"/>
-                        </Record>
-                        <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="cogi_qty"/>
                             <PropertyValue Property="Label" String="{@i18n>cogiQuantity}"/>
                         </Record>
@@ -100,12 +98,6 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="reason"/>
                             <PropertyValue Property="Label" String="{@i18n>reason}"/>
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="difference_percent"/>
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="difference_value"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="material_type"/>

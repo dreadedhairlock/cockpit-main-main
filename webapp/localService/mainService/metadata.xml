@@ -48,6 +48,12 @@
     <edmx:DataServices>
         <Schema Namespace="com.sap.gateway.srvd.zr_wm101_cockpit.v0001" Alias="SAP__self">
             <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="location_shType">
+                <Key>
+                    <PropertyRef Name="location"/>
+                </Key>
+                <Property Name="location" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
             <EntityType Name="zzdesigngrp_shType">
                 <Key>
                     <PropertyRef Name="zzdesigngrp"/>
@@ -264,6 +270,13 @@
                 <Property Name="complete_counting" Type="Edm.Boolean" Nullable="false"/>
                 <Property Name="counting" Type="Edm.Boolean" Nullable="false"/>
             </ComplexType>
+            <ComplexType Name="ZA_WM101_DEFAULT_PARAMETERS">
+                <Property Name="check_counter" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="counter" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="site" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="20"/>
+            </ComplexType>
             <ComplexType Name="ZA_WM101_CHECK_COUNTING_IM">
                 <Property Name="location_type" Type="Edm.String" Nullable="false" MaxLength="1"/>
                 <Property Name="request_id" Type="Edm.String" Nullable="false" MaxLength="20"/>
@@ -330,6 +343,7 @@
             </ComplexType>
             <Action Name="add_request" IsBound="true">
                 <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType)" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ZI_WM101_COCKPIT_COUNTING_RES" Nullable="false"/>
             </Action>
             <Action Name="check_counting_data" IsBound="true">
                 <Parameter Name="_it" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
@@ -349,6 +363,10 @@
                 <Parameter Name="_it" Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType" Nullable="false"/>
                 <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ZI_WM101_COCKPIT_COUNTING_RES" Nullable="false"/>
             </Action>
+            <Action Name="get_default_parameters" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zr_wm101_cockpit.v0001.cockpitType)" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ZA_WM101_DEFAULT_PARAMETERS" Nullable="false"/>
+            </Action>
             <EntityContainer Name="Container">
                 <EntitySet Name="ABCIN_SH" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.ABCIN_SHType"/>
                 <EntitySet Name="bklas_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.bklas_shType"/>
@@ -361,6 +379,7 @@
                 <EntitySet Name="lgpla_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lgpla_shType"/>
                 <EntitySet Name="lgtyp_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lgtyp_shType"/>
                 <EntitySet Name="lifnr_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.lifnr_shType"/>
+                <EntitySet Name="location_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.location_shType"/>
                 <EntitySet Name="matnr_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.matnr_shType"/>
                 <EntitySet Name="mtart_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.mtart_shType"/>
                 <EntitySet Name="plant_sh" EntityType="com.sap.gateway.srvd.zr_wm101_cockpit.v0001.plant_shType"/>
@@ -397,6 +416,44 @@
             </Annotations>
             <Annotations Target="SAP__self.ZI_WM101_COCKPIT_COUNTING_RES/stock_value">
                 <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.location_shType/location">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="客户"/>
+                <Annotation Term="SAP__common.QuickInfo" String="客户编号"/>
+            </Annotations>
+            <Annotations Target="SAP__self.location_shType">
+                <Annotation Term="SAP__common.Label" String="Search Help for Location"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/location_sh">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
             </Annotations>
             <Annotations Target="SAP__self.zzdesigngrp_shType/zzdesigngrp">
                 <Annotation Term="SAP__common.IsUpperCase"/>
@@ -438,6 +495,9 @@
                 <Annotation Term="SAP__core.OptimisticConcurrency">
                     <Collection/>
                 </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.cockpitType/request_id">
+                <Annotation Term="SAP__core.Computed"/>
             </Annotations>
             <Annotations Target="SAP__self.cockpitType/abc_indicator">
                 <Annotation Term="SAP__common.IsUpperCase"/>
@@ -568,7 +628,11 @@
                                 </Record>
                                 <Record>
                                     <PropertyValue Property="Property" PropertyPath="site"/>
-                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="status"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
                                 </Record>
                                 <Record>
                                     <PropertyValue Property="Property" PropertyPath="schedule_desc"/>
@@ -1680,6 +1744,12 @@
                 <Annotation Term="SAP__common.Label" String="Dyn. Action Control"/>
                 <Annotation Term="SAP__common.Heading" String="Dynamic Action Control"/>
                 <Annotation Term="SAP__common.QuickInfo" String="Dynamic Action Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZA_WM101_DEFAULT_PARAMETERS/plant">
+                <Annotation Term="SAP__common.Label" String="工厂"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZA_WM101_DEFAULT_PARAMETERS/site">
+                <Annotation Term="SAP__common.Label" String="地点"/>
             </Annotations>
             <Annotations Target="SAP__self.ZA_WM101_CHECK_COUNTING_IM/location_type">
                 <Annotation Term="SAP__common.Label" String="Location Type"/>

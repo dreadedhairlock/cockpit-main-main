@@ -20,6 +20,6 @@ builder:
           name: ZWM101COCKPIT
           description: Cockpit
           package: Z_S4HANA_FIORI
-          transport: FDCK900056
+          transport: FDCK900103
         exclude:
           - /test/
