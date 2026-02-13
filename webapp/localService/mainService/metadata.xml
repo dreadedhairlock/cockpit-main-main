@@ -615,10 +615,6 @@
                         <PropertyValue Property="FilterExpressionRestrictions">
                             <Collection>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="request_id"/>
-                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
-                                </Record>
-                                <Record>
                                     <PropertyValue Property="Property" PropertyPath="abc_indicator"/>
                                     <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
                                 </Record>
@@ -675,19 +671,11 @@
                                     <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
                                 </Record>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="difference_qty"/>
-                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
-                                </Record>
-                                <Record>
                                     <PropertyValue Property="Property" PropertyPath="reason_code"/>
                                     <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
                                 </Record>
                                 <Record>
                                     <PropertyValue Property="Property" PropertyPath="difference_percent"/>
-                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
-                                </Record>
-                                <Record>
-                                    <PropertyValue Property="Property" PropertyPath="difference_value"/>
                                     <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
                                 </Record>
                                 <Record>

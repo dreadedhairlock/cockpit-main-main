@@ -136,8 +136,8 @@
                     },
                     "Counting": {
                       "press": ".extension.cockpit.ext.controller.cockpit.onCounting",
-                      "visible": true,
-                      "enabled": true,
+                      "visible": false,
+                      "enabled": false,
                       "requiresSelection": true,
                       "text": "{i18n>counting}"
                     },
@@ -154,6 +154,16 @@
                       "enabled": true,
                       "requiresSelection": true,
                       "text": "{i18n>cancelCounting}"
+                    }
+                  },
+                  "columns": {
+                    "Test": {
+                      "position": {
+                        "anchor": "DataField::abc_indicator",
+                        "placement": "Before"
+                      },
+                      "header": "{i18n>requestId}",
+                      "template": "cockpit.ext.fragment.RequestIdLink"
                     }
                   }
                 }
