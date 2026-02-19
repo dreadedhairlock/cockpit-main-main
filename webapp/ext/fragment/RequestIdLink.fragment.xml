@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
 	<Link 
-	id="testLink" 
+	id="idRequestIdLink" 
 	core:require="{ handler: 'cockpit/ext/fragment/RequestIdLinkPress'}" 
 	text="{request_id}" 
 	press="handler.onPressRequestId" />

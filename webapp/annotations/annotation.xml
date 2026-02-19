@@ -163,6 +163,10 @@
                             <PropertyValue Property="Value" Path="comment_desc"/>
                             <PropertyValue Property="Label" String="{@i18n>comment}"/>
                         </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="request_id"/>
+                            <Annotation Term="UI.Hidden"/>
+                        </Record>
                     </Collection>
                 </Annotation>
             </Annotations>

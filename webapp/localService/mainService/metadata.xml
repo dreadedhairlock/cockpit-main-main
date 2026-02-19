@@ -531,12 +531,6 @@
             <Annotations Target="SAP__self.cockpitType/cogi_qty">
                 <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
             </Annotations>
-            <Annotations Target="SAP__self.cockpitType/difference_percent">
-                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
-            </Annotations>
-            <Annotations Target="SAP__self.cockpitType/difference_value">
-                <Annotation Term="SAP__measures.Unit" Path="base_unit_of_measure"/>
-            </Annotations>
             <Annotations Target="SAP__self.cockpitType/currency">
                 <Annotation Term="SAP__common.IsCurrency"/>
                 <Annotation Term="SAP__common.IsUpperCase"/>

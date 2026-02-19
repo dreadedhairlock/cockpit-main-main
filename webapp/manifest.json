@@ -157,13 +157,20 @@
                     }
                   },
                   "columns": {
-                    "Test": {
+                    "RequestId": {
                       "position": {
                         "anchor": "DataField::abc_indicator",
                         "placement": "Before"
                       },
                       "header": "{i18n>requestId}",
-                      "template": "cockpit.ext.fragment.RequestIdLink"
+                      "template": "cockpit.ext.fragment.RequestIdLink",
+                      "availability": "Default",
+                      "properties": [
+                        "request_id"
+                      ]
+                    },
+                    "DataField::request_id": {
+                      "availability": "Hidden"
                     }
                   }
                 }

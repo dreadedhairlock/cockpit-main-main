@@ -10,9 +10,6 @@ sap.ui.define(
 
       _counter: null,
 
-      _semanticObject: null,
-      _actionName: null,
-      // * Private instance props for
 
       // * Lifecycle hook: called once on extension init
       override: {
@@ -45,23 +42,23 @@ sap.ui.define(
           var oFilterBar = oView.byId("fe::FilterBar::cockpit");
           if (oFilterBar) {
             var oFilterPlant = oView.byId(
-              "fe::FilterBar::cockpit::FilterField::plant", // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+              "fe::FilterBar::cockpit::FilterField::plant",
             );
 
             var oFilterSite = oView.byId(
-              "fe::FilterBar::cockpit::FilterField::site", // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+              "fe::FilterBar::cockpit::FilterField::site", 
             );
 
             var oFilterStatus = oView.byId(
-              "fe::FilterBar::cockpit::FilterField::status", // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+              "fe::FilterBar::cockpit::FilterField::status",
             );
 
             var oFilterStatus = oView.byId(
-              "fe::FilterBar::cockpit::FilterField::status", // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+              "fe::FilterBar::cockpit::FilterField::status",
             );
 
             var oFilterCounter = oView.byId(
-              "fe::FilterBar::cockpit::FilterField::counter", // GANTI EBELN KE FILTER YANG PENGEN DIPAKE
+              "fe::FilterBar::cockpit::FilterField::counter",
             );
 
             if (oFilterPlant) {
